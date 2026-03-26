@@ -1,0 +1,33 @@
+###
+
+GET http://localhost:3000/users
+
+
+###
+GET http://localhost:3000/users/6/
+
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "narayan",
+  "email": "jogi@gmail.com",
+  "age": 16
+}
+###
+
+
+PUT http://localhost:3000/users/5
+Content-Type: application/json
+
+{
+  "name": "narayan",
+  "email": "narayana@gmail.com",
+  "age": 45
+}
+
+###
+DELETE http://localhost:3000/users/4
