@@ -33,6 +33,7 @@ const initializeDBAndServer = async () => {
     app.listen(PORT, () => {
       console.log(`Server Running at http://localhost:${PORT}/`);
     });
+    
 
   } catch (e) {
     console.log(`DB Error: ${e.message}`);
@@ -41,6 +42,10 @@ const initializeDBAndServer = async () => {
 };
 
 initializeDBAndServer();
+
+app.get("/", (req, res) => {
+  res.send("User Management API is running");
+});
 
 
 
