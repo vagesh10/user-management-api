@@ -84,16 +84,20 @@ app.get("/users/:id/", async (request, response) => {
 app.post("/users/", async (request, response) => {
   const { name, email, age } = request.body;
 
-  const addUserQuery = `
+  const query = `
     INSERT INTO users (name, email, age)
-    VALUES ('${name}', '${email}', ${age});
+    VALUES (?, ?, ?);
   `;
 
-  const result = await db.run(addUserQuery);
+  const result = await db.run(query, [name, email, age]);
 
-  response.send({ id: result.lastID });
+  response.send({
+    id: result.lastID,
+    name,
+    email,
+    age
+  });
 });
-
 // 🔹 PUT /users/:id
 app.put("/users/:id/", async (request, response) => {
   const { id } = request.params;
