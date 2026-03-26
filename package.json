@@ -8,6 +8,7 @@
   "dependencies": {
     "better-sqlite3": "^12.8.0",
     "express": "*",
-    "sqlite": "*"
+    "sqlite": "*",
+    "sqlite3": "^5.1.6"
   }
 }
